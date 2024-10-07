@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat with PDFs</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    <p class="heading">TalkPDF</p>
+    <div class="chat-container">
+        <div class="mechanical-model">
+            <div class="model-select" id="model-select">
+                <div class="selected-model">
+                    Gemini
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 3L11 8L5 13" stroke="#626262ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="model-dropdown" id="model-dropdown">
+                    <div class="model-option" data-value="gemini">Gemini</div>
+                    <div class="model-option" data-value="mistral">Mistral</div>
+                    <div class="model-option" data-value="llama3.2">llama-3.2</div>
+                    <div class="model-option" data-value="a21">A21</div>
+                </div>
+            </div>
+        </div>
+        <div class="scrollable chat-text-area" id="chat-text-area">
+            <!-- Chat messages will be inserted here -->
+             <div class="no-chat-display">
+                <p>Start talking to your pdf</p>
+                <div class="items">
+                    <div class="item" style="background: rgba(200, 144, 255, 0.18); font-weight: 480;">
+                        <!-- <img src="../static/images/database.svg" alt="local-img" height="24px" /> -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none">
+                            <path d="M20 7C20 9.20914 16.4183 11 12 11C7.58172 11 4 9.20914 4 7C4 4.79086 7.58172 3 12 3C16.4183 3 20 4.79086 20 7Z" stroke="#323232" stroke-width="2"/>
+                            <path d="M20 12C20 14.2091 16.4183 16 12 16C7.58172 16 4 14.2091 4 12" stroke="#323232" stroke-width="2"/>
+                            <path d="M4 7V17C4 19.2091 7.58172 21 12 21C16.4183 21 20 19.2091 20 17V7" stroke="#323232" stroke-width="2"/>
+                        </svg>
+                        <p>Localized models for quick responses</p>
+                    </div>
+                    <div class="item" style="background: rgba(238, 238, 122, 0.18); font-weight: 480;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none">
+                            <path d="M7 7L5.5 5.5M15 7L16.5 5.5M5.5 16.5L7 15M11 5L11 3M5 11L3 11M17.1603 16.9887L21.0519 15.4659C21.4758 15.3001 21.4756 14.7003 21.0517 14.5346L11.6992 10.8799C11.2933 10.7213 10.8929 11.1217 11.0515 11.5276L14.7062 20.8801C14.8719 21.304 15.4717 21.3042 15.6375 20.8803L17.1603 16.9887Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <p>Includes more powerful open-source models for better responses</p>
+                    </div>
+                    <div class="item" style="background: rgba(172, 255, 47, 0.18); font-weight: 480;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" width="24px" height="24px" viewBox="0 0 32 32" id="icon">
+                            <defs>
+                              <style>
+                                .cls-1 {
+                                  fill: none;
+                                }
+                              </style>
+                            </defs>
+                            <path d="M22,4V7H10V4H2v8h8V9h7.0234A4.9463,4.9463,0,0,0,16,12v8A3.0037,3.0037,0,0,1,13,23H10V20H2v8h8V25H13A5.0062,5.0062,0,0,0,18,20V12a2.9982,2.9982,0,0,1,2.9971-3H22v3h8V4ZM8,10H4V6H8ZM8,26H4V22H8ZM28,10H24V6h4Z"/>
+                            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/>
+                          </svg>
+                        <p>Quicker pdf uploads with inbuilt embeddings</p>
+                    </div>
+                </div>
+             </div>
+        </div>
+        <div class="chat-area">
+            <button class="upload" type="button" onclick="document.getElementById('file-upload').click();">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9 7C9 4.23858 11.2386 2 14 2C16.7614 2 19 4.23858 19 7V15C19 18.866 15.866 22 12 22C8.13401 22 5 18.866 5 15V9C5 8.44772 5.44772 8 6 8C6.55228 8 7 8.44772 7 9V15C7 17.7614 9.23858 20 12 20C14.7614 20 17 17.7614 17 15V7C17 5.34315 15.6569 4 14 4C12.3431 4 11 5.34315 11 7V15C11 15.5523 11.4477 16 12 16C12.5523 16 13 15.5523 13 15V9C13 8.44772 13.4477 8 14 8C14.5523 8 15 8.44772 15 9V15C15 16.6569 13.6569 18 12 18C10.3431 18 9 16.6569 9 15V7Z" fill="currentColor"></path>
+                </svg>
+                <input type="file" id="file-upload" name="file" accept=".pdf" style="display: none;">
+            </button>
+            <div class="input-field">
+                <input id="chat-input" class="input" name="question" placeholder="Ask about the PDF content..." required>
+            </div>
+            <div class="send-button">
+                <button id="send-button" class="button" type="button">
+                    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-2xl">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M15.1918 8.90615C15.6381 8.45983 16.3618 8.45983 16.8081 8.90615L21.9509 14.049C22.3972 14.4953 22.3972 15.2189 21.9509 15.6652C21.5046 16.1116 20.781 16.1116 20.3347 15.6652L17.1428 12.4734V22.2857C17.1428 22.9169 16.6311 23.4286 15.9999 23.4286C15.3688 23.4286 14.8571 22.9169 14.8571 22.2857V12.4734L11.6652 15.6652C11.2189 16.1116 10.4953 16.1116 10.049 15.6652C9.60265 15.2189 9.60265 14.4953 10.049 14.049L15.1918 8.90615Z" fill="currentColor"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
