@@ -98,7 +98,7 @@ Also includes integrations for the LangChain models and chains with Django views
 - [LangChain Tutorials Youtube](https://www.youtube.com/playlist?list=PL0iK4i3eaebZDU1YvFil0sUbcuU8Dg-vH)
 - [LangChain Documentation](https://langchain.readthedocs.io)
 - [Ollama](https://ollama.com/)
-- [Hugging Face Embeddings](https://huggingface.co/docs/transformers/index)
+- [Google Embeddings](https://python.langchain.com/docs/integrations/text_embedding/google_generative_ai/)
 - [Google Gemini Model](https://cloud.google.com/genai)
 - [Django Documentation](https://docs.djangoproject.com/en/stable/)
 - [AWS Deployment Django App](https://youtu.be/uiPSnrE6uWE?si=7SLjRWfPravo5gIa)
