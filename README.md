@@ -53,14 +53,6 @@ Also includes integrations for the LangChain models and chains with Django views
 - **`corsheaders`**: Configured in Django to allow cross-origin requests (CORS) for flexibility in API access.
 - **`urls.py`**: Handles routing to various endpoints like file uploads, model switching, and chat interactions.
 
-## 💡References
-- [LangChain Documentation](https://langchain.readthedocs.io)
-- [Ollama](https://ollama.com/)
-- [Hugging Face Embeddings](https://huggingface.co/docs/transformers/index)
-- [Google Gemini Model](https://cloud.google.com/genai)
-- [Django Documentation](https://docs.djangoproject.com/en/stable/)
-- [AWS Deployment](https://aws.amazon.com/getting-started/)
-
 ## 📈📉📈📉 Running the Project
 
 ### 🔐 Locally
@@ -101,6 +93,14 @@ Also includes integrations for the LangChain models and chains with Django views
    python manage.py runserver 0.0.0.0:8000
    ```
 5. Ensure the appropriate security groups are set in AWS to allow traffic to port 8000.
+
+## 💡References
+- [LangChain Documentation](https://langchain.readthedocs.io)
+- [Ollama](https://ollama.com/)
+- [Hugging Face Embeddings](https://huggingface.co/docs/transformers/index)
+- [Google Gemini Model](https://cloud.google.com/genai)
+- [Django Documentation](https://docs.djangoproject.com/en/stable/)
+- [AWS Deployment](https://aws.amazon.com/getting-started/)
 
 ## 🥹 Open for Issues
 If you encounter any issues or have questions about the project, feel free to open an issue or contribute by submitting a pull request.
