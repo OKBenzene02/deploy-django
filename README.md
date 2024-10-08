@@ -1,4 +1,4 @@
-# 🤖 ChatPDF with Django and LangChain
+# 🤖 TalkPDF with Django and LangChain
 
 ## 👀 Project Overview
 This project is a PDF and document chatbot application built using Django, LangChain, and multiple LLMs (Large Language Models) both local and API-driven. It allows users to upload documents (PDFs, DOCX) and chat with them using advanced language models such as Google Gemini, Mistral, and Llama 3.2. The application is designed to be highly flexible and scalable, capable of processing multiple document types and providing intelligent answers based on document content.
