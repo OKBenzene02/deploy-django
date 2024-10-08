@@ -95,12 +95,14 @@ Also includes integrations for the LangChain models and chains with Django views
 5. Ensure the appropriate security groups are set in AWS to allow traffic to port 8000.
 
 ## 💡References
+- [LangChain Tutorials Youtube](https://www.youtube.com/playlist?list=PL0iK4i3eaebZDU1YvFil0sUbcuU8Dg-vH)
 - [LangChain Documentation](https://langchain.readthedocs.io)
 - [Ollama](https://ollama.com/)
 - [Hugging Face Embeddings](https://huggingface.co/docs/transformers/index)
 - [Google Gemini Model](https://cloud.google.com/genai)
 - [Django Documentation](https://docs.djangoproject.com/en/stable/)
-- [AWS Deployment](https://aws.amazon.com/getting-started/)
+- [AWS Deployment Django App](https://youtu.be/uiPSnrE6uWE?si=7SLjRWfPravo5gIa)
+- [AWS Deployment Flask App](https://youtu.be/ct1GbTvgVNM?si=oUO_kNKTNBmO_oWv)
 
 ## 🥹 Open for Issues
 If you encounter any issues or have questions about the project, feel free to open an issue or contribute by submitting a pull request.
