@@ -20,9 +20,6 @@ from dotenv import load_dotenv
 load_dotenv()
 GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
 
-# GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "AIzaSyDeKAib3mKMfM8SXYvGwnlVpygboUbkxLw")
-# GOOGLE_APPLICATION_CREDENTIALS=os.getenv("GOOGLE_APPLICATION_CREDENTIALS", 'credentials.json')
-
 # Global variables
 vector_store = None
 chat_history = []
