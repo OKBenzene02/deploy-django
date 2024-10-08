@@ -55,6 +55,12 @@ Also includes integrations for the LangChain models and chains with Django views
 
 ## 📈📉📈📉 Running the Project
 
+Create environment variables for Gemini and Google credentials
+```bash
+echo GOOGLE_API_KEY=YOUR_API_KEY
+GOOGLE_APPLICATION_CREDENTIALS=credentials.json > .env
+```
+
 ### 🔐 Locally
 1. Clone the repository:
    ```bash
