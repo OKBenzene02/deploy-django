@@ -37,13 +37,13 @@ def clean_pages(pages):
 
 def get_llm_model(model_name='gemini'):
     if model_name == 'gemini':
-        return GoogleGenerativeAI(google_api_key=GOOGLE_API_KEY, model='gemini-pro')
+        return GoogleGenerativeAI(google_api_key=GOOGLE_API_KEY, model='gemini-1.5-flash')
     elif model_name == 'mistral':
         return Ollama(model='mistral')
     elif model_name == 'llama3.2':
         return Ollama(model='llama3.2')
     else:
-        return GoogleGenerativeAI(google_api_key=GOOGLE_API_KEY, model='gemini-pro')
+        return GoogleGenerativeAI(google_api_key=GOOGLE_API_KEY, model='gemini-1.5-flash')
 
 def home(request):
     return render(request, 'chat/index.html')
@@ -127,8 +127,8 @@ def chat(request):
         prompt = ChatPromptTemplate.from_messages([
             ("system", instruction_to_system),
             MessagesPlaceholder(variable_name="chat_history"),
-            ("human", "{question}"),
-            ("system", "Relevant context: {context}")
+            ("human", "{{question}}"),
+            ("system", "Relevant context: {{context}}")
         ])
 
         chain = (
